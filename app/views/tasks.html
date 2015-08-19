@@ -1,0 +1,48 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<!--  -->
+			<h1 class="text-center">Task Mate</h1>
+			<!-- Add Task Form -->
+			<form ng-submit="addTask()">
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="What's your task?" ng-model="task.task">
+				  <span class="input-group-btn">
+						<button type="submit" class="btn btn-default">
+	             <span class="glyphicon glyphicon-plus"></span> Add
+	          </button>
+				  </span>
+				</div>
+			</form>
+			Tasks: {{ tasks }}<br />
+			Task: {{ task }}
+
+			<!-- Current Tasks -->
+			<div class="">
+				<h3 class="current-tasks text-center">Current Tasks</h3>
+				<div ng-repeat="(taskId,task) in tasks">
+				  <div><input type="checkbox" value=""> {{ task.task }} <a ng-click="deleteTask(taskId)"><i class="glyphicon glyphicon-trash"></i></a></div>
+				</div>
+				<ul id="sortable" class="list-unstyled">
+          <li class="ui-state-default">
+              <div class="checkbox">
+                  <label><input type="checkbox" value="">Take out the trash</label>
+              </div>
+          </li>
+      	</ul>
+      	<!-- <div class="todo-footer">
+          <strong><span class="count-todos"></span></strong> Items Left
+        </div> -->
+			</div>
+		</div>
+		<!-- <div class="col-md-6">
+        <div class="todolist">
+         <h1>Already Done</h1>
+            <ul id="done-items" class="list-unstyled">
+                <li>Some item <button class="remove-item btn btn-default btn-xs pull-right"><span class="glyphicon glyphicon-remove"></span></button></li>
+                
+            </ul>
+        </div>
+    </div> -->
+	</div>
+</div>
